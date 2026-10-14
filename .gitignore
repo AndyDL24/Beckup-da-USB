@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+backup/
+config.json
+build/
+dist/
+*.spec
+BeckupFileUSB.exe

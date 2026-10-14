@@ -1,0 +1,3 @@
+[Autorun]
+open=BeckupFileUSB.exe
+action=Backup file su USB
