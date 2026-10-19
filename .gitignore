@@ -2,6 +2,7 @@ __pycache__/
 *.pyc
 backup/
 config.json
+.config_*.tmp
 build/
 dist/
 *.spec
