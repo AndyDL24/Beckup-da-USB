@@ -16,6 +16,7 @@ import webbrowser
 from datetime import datetime
 from tkinter import filedialog, messagebox, ttk
 
+VERSIONE = "1.1"
 INTERVALLO_PREDEFINITO = 10
 INTERVALLI = (10, 30, 60, 300)
 MAX_RIGHE_REGISTRO = 400
@@ -1195,7 +1196,7 @@ class BackupApp(tk.Tk):
         if codice not in self.lingue:
             return
         self.codice_lingua = codice
-        self.title(self.t("titolo_finestra"))
+        self.title(f"{self.t('titolo_finestra')} {VERSIONE}")
         self.etichetta_titolo.configure(text=self.t("titolo"))
         self.etichetta_descrizione.configure(text=self.t("descrizione"))
         self.etichetta_lingua.configure(text=self.t("lingua"))
@@ -1278,15 +1279,16 @@ class BackupApp(tk.Tk):
         cornice.grid(row=0, column=0, sticky="nsew")
 
         ttk.Label(cornice, text=self.t("titolo"), font=("Segoe UI", 13, "bold")).grid(row=0, column=0, sticky="w")
-        ttk.Label(cornice, text=self.t("about_proprieta"), wraplength=420).grid(row=1, column=0, sticky="w", pady=(10, 0))
-        ttk.Label(cornice, text=self.t("about_donazione"), wraplength=420).grid(row=2, column=0, sticky="w", pady=(8, 0))
+        ttk.Label(cornice, text=self.t("versione", versione=VERSIONE)).grid(row=1, column=0, sticky="w", pady=(4, 0))
+        ttk.Label(cornice, text=self.t("about_proprieta"), wraplength=420).grid(row=2, column=0, sticky="w", pady=(10, 0))
+        ttk.Label(cornice, text=self.t("about_donazione"), wraplength=420).grid(row=3, column=0, sticky="w", pady=(8, 0))
 
         link = tk.Label(cornice, text=LINK_KOFI, fg="#1a5fb4", cursor="hand2")
-        link.grid(row=3, column=0, sticky="w", pady=(8, 0))
+        link.grid(row=4, column=0, sticky="w", pady=(8, 0))
         link.bind("<Button-1>", lambda _evento: self._apri_kofi())
 
         comandi = ttk.Frame(cornice)
-        comandi.grid(row=4, column=0, sticky="e", pady=(16, 0))
+        comandi.grid(row=5, column=0, sticky="e", pady=(16, 0))
         ttk.Button(comandi, text=self.t("about_apri_kofi"), command=self._apri_kofi).grid(row=0, column=0, padx=(0, 8))
         ttk.Button(comandi, text=self.t("chiudi"), command=finestra.destroy).grid(row=0, column=1)
 
@@ -1588,7 +1590,7 @@ class BackupApp(tk.Tk):
             return
         if self._tray is None:
             try:
-                self._tray = IconaTray(self.t("titolo"))
+                self._tray = IconaTray(f"{self.t('titolo')} {VERSIONE}")
             except OSError as errore:
                 messagebox.showerror(self.t("titolo_finestra"), self.t("errore_tray", errore=errore))
                 return

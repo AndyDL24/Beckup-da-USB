@@ -7,3 +7,4 @@ build/
 dist/
 *.spec
 BeckupFileUSB.exe
+test_beckup.py

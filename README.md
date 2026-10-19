@@ -2,6 +2,8 @@
 
 # Beckup da USB
 
+Versione / Version 1.1
+
 Copia una o più cartelle sul supporto dove si trova il programma, sottocartelle comprese. Aggiorna un file se manca, se la dimensione è diversa o se l'origine è più recente.
 
 Copies one or more folders onto the drive where the program lives, including subfolders. A file is updated when it is missing, when the size differs, or when the source is newer.
@@ -53,7 +55,7 @@ Ogni lingua è un file JSON nella cartella [`lingue`](lingue). Per aggiungerne u
 1. Copia [`lingue/en.json`](lingue/en.json) in un file nuovo, per esempio `lingue/fr.json`.
 2. Cambia `codice` (per esempio `fr`) e `nome` (il nome visibile nel menu, per esempio `Français`).
 3. Traduci solo i valori dentro `testi`. Le chiavi restano identiche a quelle di `en.json`.
-4. Lascia invariate le parole tra graffe: `{cartella}`, `{cartelle}`, `{destinazione}`, `{errore}`, `{ora}`, `{copiati}`, `{invariati}`, `{spostati}`, `{errori}`, `{file}`, `{richiesti}`, `{liberi}`.
+4. Lascia invariate le parole tra graffe: `{cartella}`, `{cartelle}`, `{destinazione}`, `{errore}`, `{ora}`, `{copiati}`, `{invariati}`, `{spostati}`, `{errori}`, `{file}`, `{richiesti}`, `{liberi}`, `{versione}`.
 5. Salva il file in UTF-8 e apri una pull request.
 
 Se manca una frase, il programma usa il testo italiano e poi quello inglese. All'avvio legge i JSON dentro il programma e, se c'è, anche la cartella `lingue` accanto all'eseguibile o allo script.
@@ -110,7 +112,7 @@ Each language is a JSON file in the [`lingue`](lingue) folder. To add one:
 1. Copy [`lingue/en.json`](lingue/en.json) to a new file, for example `lingue/fr.json`.
 2. Change `codice` (for example `fr`) and `nome` (the name shown in the menu, for example `Français`).
 3. Translate only the values inside `testi`. Keep the same keys as in `en.json`.
-4. Leave the words in braces unchanged: `{cartella}`, `{cartelle}`, `{destinazione}`, `{errore}`, `{ora}`, `{copiati}`, `{invariati}`, `{spostati}`, `{errori}`, `{file}`, `{richiesti}`, `{liberi}`.
+4. Leave the words in braces unchanged: `{cartella}`, `{cartelle}`, `{destinazione}`, `{errore}`, `{ora}`, `{copiati}`, `{invariati}`, `{spostati}`, `{errori}`, `{file}`, `{richiesti}`, `{liberi}`, `{versione}`.
 5. Save the file as UTF-8 and open a pull request.
 
 If a sentence is missing, the program uses the Italian text, then the English one. At startup it reads the JSON files shipped with the program and, when present, the `lingue` folder next to the executable or the script.
